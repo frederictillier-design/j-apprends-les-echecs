@@ -104,7 +104,7 @@ Board.prototype.html = function(){
   if(this.game && this.game.inCheck()){ var tb = this.game.board(); for(var rr=0;rr<8;rr++) for(var cc=0;cc<8;cc++){ var x=tb[rr][cc]; if(x && x.type==='k' && x.color===this.game.turn()) chk = FILES[cc]+(8-rr); } }
   for(var r=0;r<8;r++) for(var c=0;c<8;c++){
     var file = flip ? 7-c : c, rank = flip ? r+1 : 8-r, sq = FILES[file]+rank;
-    var light = (file+rank)%2===1;
+    var light = (file+rank)%2===0;
     var cls = 'sq '+(light?'light':'dark');
     if(this.last && (this.last[0]===sq||this.last[1]===sq)) cls+=' lm';
     if(this.hl.indexOf(sq)>=0) cls+=' hl';
